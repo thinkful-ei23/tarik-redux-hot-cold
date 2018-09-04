@@ -8,23 +8,8 @@ import { connect } from 'react-redux';
 import { makeGuess, restartGame, generateAuralUpdate } from '../actions';
 
 export class Game extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     guesses: [],
-  //     feedback: 'Make your guess!',
-  //     auralStatus: '',
-  //     correctAnswer: Math.floor(Math.random() * 100) + 1
-  //   };
-  // }
 
   restartGame() {
-    // this.setState({
-    //   guesses: [],
-    //   feedback: 'Make your guess!',
-    //   auralStatus: '',
-    //   correctAnswer: Math.floor(Math.random() * 100) + 1
-    // });
     this.props.dispatch(restartGame());
   }
 
@@ -50,10 +35,6 @@ export class Game extends React.Component {
       feedback = 'You got it!';
     }
 
-    // this.setState({
-    //   feedback,
-    //   guesses: [...this.state.guesses, guess]
-    // });
     this.props.dispatch(makeGuess(guess, feedback));
 
     // We typically wouldn't touch the DOM directly like this in React
@@ -77,7 +58,6 @@ export class Game extends React.Component {
     }
 
     this.props.dispatch(generateAuralUpdate(auralStatus));
-    // this.setState({ auralStatus });
   }
 
   render() {
